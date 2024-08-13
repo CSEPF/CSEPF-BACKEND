@@ -5,6 +5,6 @@ files:
     destination: /home/ubuntu/django-aws_cicd
 hooks:
   BeforeInstall:
-      - location: scripts/before_install.sh
+    - location: src/scripts/before_install.sh
   AfterInstall:
-      - location: scripts/after_install.sh
+    - location: src/scripts/after_install.sh
