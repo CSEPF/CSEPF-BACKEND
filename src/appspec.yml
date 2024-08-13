@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/django-aws_cicd
+    destination: /home/ubuntu/csepf-api
 hooks:
   BeforeInstall:
     - location: src/scripts/before_install.sh

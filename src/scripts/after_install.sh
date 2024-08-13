@@ -7,14 +7,21 @@ sudo pkill -f runserver
 # sudo pkill -f tailwind
 # sudo pkill -f node
 
-cd /home/ubuntu/django-aws_cicd/
+cd /home/ubuntu/csepf-api/
+echo "Changed directory to /home/ubuntu/csepf-api/"
 
 # activate virtual environment
 python3 -m venv venv
 source venv/bin/activate
 
+echo "Activated virtual environment"
+
 install requirements.txt
-pip install -r /home/ubuntu/django-aws_cicd/requirements.txt
+pip install -r /home/ubuntu/csepf-api/requirements.txt
+
+echo "Installed requirements"
 
 # run server
 screen -d -m python3 manage.py runserver 0:8000
+
+echo "Server started"
