@@ -1,25 +1,15 @@
-#!/usr/bin/env bash
+#!/bin/bash
+# after_install.sh
 
-# kill any servers that may be running in the background 
-sudo pkill -f runserver
+# Navigate to the Django project directory and install dependencies
+cd /home/ubuntu/csepf-api/src
+pip3 install -r requirements.txt
 
-# kill frontend servers if you are deploying any frontend
-# sudo pkill -f tailwind
-# sudo pkill -f node
+# Collect static files
+python3 manage.py collectstatic --noinput
 
-cd /home/ubuntu/csepf-api/
-echo "Changed directory to /home/ubuntu/csepf-api/"
-
-# activate virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-echo "Activated virtual environment"
-
-install requirements.txt
-pip install -r /home/ubuntu/csepf-api/requirements.txt
-
-echo "Installed requirements"
+# Apply migrations
+python3 manage.py migrate
 
 # run server
 screen -d -m python3 manage.py runserver 0:8000
