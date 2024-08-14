@@ -1,27 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# kill any servers that may be running in the background 
-sudo pkill -f runserver
+cd /webapps/csepf/api
 
-# kill frontend servers if you are deploying any frontend
-# sudo pkill -f tailwind
-# sudo pkill -f node
+sudo docker-compose down
+sudo docker-compose down --remove-orphans
+sudo docker stop $(docker ps -q) && sudo docker rm $(docker ps -aq)
+sudo service docker restart
+sudo docker image prune -f
+sudo docker builder prune -f
 
-cd /home/ubuntu/csepf-api/
-echo "Changed directory to /home/ubuntu/csepf-api/"
-
-# activate virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-echo "Activated virtual environment"
-
-install requirements.txt
-pip install -r /home/ubuntu/csepf-api/requirements.txt
-
-echo "Installed requirements"
-
-# run server
-screen -d -m python3 manage.py runserver 0:8000
-
-echo "Server started"
+# Build the new Docker images
+sudo docker-compose build
