@@ -1,25 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: src # copy all files in this folder
-    destination: /webapps/csepf/api # and put them here in the server
+  - source: /
+    destination: /home/ubuntu/csepf-api
 hooks:
   BeforeInstall:
-    - location: scripts/before_install.sh
-      timeout: 300
-      runas: root
+    - location: src/scripts/before_install.sh
   AfterInstall:
-    - location: scripts/load_env.sh
-      timeout: 300
-      runas: root
-    - location: scripts/after_install.sh
-      timeout: 300
-      runas: root
-  ApplicationStart:
-    - location: scripts/start_application.sh
-      timeout: 300
-      runas: root
-  ValidateService:
-    - location: scripts/validate_service.sh
-      timeout: 300
-      runas: root
+    - location: src/scripts/after_install.sh
