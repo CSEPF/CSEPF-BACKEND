@@ -2,7 +2,7 @@
 # after_install.sh
 
 # Navigate to the Django project directory and install dependencies
-cd /home/ubuntu/csepf-api/src
+cd /home/ubuntu/csepf-api
 pip3 install -r requirements.txt
 
 # Collect static files
