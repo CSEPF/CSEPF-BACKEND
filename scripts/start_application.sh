@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ensure the application directory exists
-APP_DIR="/webapps/csepf"
+APP_DIR="/csepf"
 if [ ! -d "$APP_DIR" ]; then
   echo "Application directory $APP_DIR does not exist. Exiting."
   exit 1
