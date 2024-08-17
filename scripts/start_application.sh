@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to the application directory
-cd /webapps/csepf
+cd /csepf
 
 # Activate the virtual environment
 source venv/bin/activate

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to the application directory
-cd /webapps/csepf
+cd /csepf
 
 # Create a virtual environment
 python3 -m venv venv
