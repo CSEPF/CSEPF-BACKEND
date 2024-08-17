@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 # Update package list
 sudo apt-get update
@@ -6,5 +6,14 @@ sudo apt-get update
 # Install necessary packages
 sudo apt-get install -y python3 python3-pip python3-venv
 
-# Install AWS CLI
-pip3 install awscli --upgrade
+# Create a virtual environment
+python3 -m venv /home/ubuntu/aws_venv
+
+# Activate the virtual environment
+source /home/ubuntu/aws_venv/bin/activate
+
+# Install AWS CLI within the virtual environment
+pip install awscli --upgrade
+
+# Deactivate the virtual environment
+deactivate
