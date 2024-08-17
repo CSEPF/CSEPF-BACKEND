@@ -3,11 +3,8 @@
 # Navigate to the application directory
 cd /csepf
 
-# Create a virtual environment
-python3 -m venv venv
-
 # Activate the virtual environment
-source venv/bin/activate
+source /home/ubuntu/aws_venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
