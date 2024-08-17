@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # URL to check
-URL="http://localhost:8000"
+URL="http://0.0.0.0:8000"
 
 # Make an HTTP request to the application
 STATUS_CODE=$(curl --write-out "%{http_code}" --silent --output /dev/null "$URL")
