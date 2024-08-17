@@ -24,10 +24,10 @@ source "$VENV_DIR/bin/activate"
 # Install dependencies
 pip install -r requirements.txt
 
-# # Apply Django migrations
-# python manage.py migrate
+# Apply Django migrations
+python manage.py migrate
 
-# # Collect static files
-# python manage.py collectstatic --noinput
+# Collect static files
+python manage.py collectstatic --noinput
 
 deactivate
