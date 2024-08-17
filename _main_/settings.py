@@ -21,7 +21,7 @@ load_dotenv()
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-#&")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # https://*.massenergize.org, https://*.massenergize.com, https://*.massenergize.dev, https://*.massenergize.test
@@ -90,7 +90,7 @@ WSGI_APPLICATION = "_main_.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
+    "psql": {
         "ENGINE": os.environ.get("DATABASE_ENGINE"),
         "NAME": os.environ.get("DATABASE_NAME"),
         "USER": os.environ.get("DATABASE_USER"),
@@ -98,7 +98,7 @@ DATABASES = {
         "HOST": os.environ.get("DATABASE_HOST"),
         "PORT": os.environ.get("DATABASE_PORT"),
     },
-    "test_db": {
+    "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": "test.sqlite3",
     },
