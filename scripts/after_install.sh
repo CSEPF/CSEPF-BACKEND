@@ -20,6 +20,8 @@ fi
 
 # Activate the virtual environment
 source "$VENV_DIR/bin/activate"
+sudo chmod a+w /home/ubuntu/aws_venv/lib/python3.12/site-packages
+sudo chmod a+w /home/ubuntu/aws_venv/venv/bin
 
 # Install dependencies
 pip install -r requirements.txt
