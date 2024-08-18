@@ -13,7 +13,7 @@ python3 -m venv /home/ubuntu/aws_venv
 source /home/ubuntu/aws_venv/bin/activate
 
 sudo chmod a+w /home/ubuntu/aws_venv/lib/python3.12/site-packages
-sudo chmod a+w /home/ubuntu/aws_venv/venv/bin
+sudo chmod a+w /home/ubuntu/aws_venv/bin
 
 # Install AWS CLI within the virtual environment
 pip install awscli --upgrade
