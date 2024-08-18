@@ -14,10 +14,10 @@ hooks:
       timeout: 300
       runas: root
 
-    - location: src/scripts/setup_nginx.sh
+    - location: scripts/setup_nginx.sh
      timeout: 300
       runas: root
-      
+
   ApplicationStart:
     - location: scripts/start_application.sh
       timeout: 300
