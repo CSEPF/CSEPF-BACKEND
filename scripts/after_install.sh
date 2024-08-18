@@ -21,10 +21,14 @@ fi
 # Activate the virtual environment
 source "$VENV_DIR/bin/activate"
 sudo chmod a+w /home/ubuntu/aws_venv/lib/python3.12/site-packages
-sudo chmod a+w /home/ubuntu/aws_venv/venv/bin
+sudo chmod a+w /home/ubuntu/aws_venv/bin
 
 # Install dependencies
 pip install -r requirements.txt
+
+# s3://csepf-creds/.env
+sudo chmod a+w .
+aws s3 cp s3://csepf-creds/.env .env
 
 # Apply Django migrations
 python manage.py migrate
