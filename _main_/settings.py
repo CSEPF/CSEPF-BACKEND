@@ -90,7 +90,7 @@ WSGI_APPLICATION = "_main_.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "psql": {
+    "default": {
         "ENGINE": os.environ.get("DATABASE_ENGINE"),
         "NAME": os.environ.get("DATABASE_NAME"),
         "USER": os.environ.get("DATABASE_USER"),
@@ -98,7 +98,7 @@ DATABASES = {
         "HOST": os.environ.get("DATABASE_HOST"),
         "PORT": os.environ.get("DATABASE_PORT"),
     },
-    "default": {
+    "test": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": "test.sqlite3",
     },
