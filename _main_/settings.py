@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -103,6 +105,10 @@ DATABASES = {
         "NAME": "test.sqlite3",
     },
 }
+DATABASES['default'] = dj_database_url.config(
+    conn_max_age=600,
+    conn_health_checks=True,
+)
 
 # -------- FILE STORAGE CONFIGURATION ---------------------#
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
