@@ -30,7 +30,12 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-#&")
 DEBUG = True
 CSRF_TRUSTED_ORIGINS = ["http://*.csepf.test"]
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "main.d2l2e23fu3jjf4.amplifyapp.com",
+    "*.cspef.org",
+    "csepf-cf3b76628104.herokuapp.com"
+]
 
 # Application definition
 
