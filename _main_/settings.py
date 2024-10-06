@@ -33,7 +33,8 @@ CSRF_TRUSTED_ORIGINS = ["http://*.csepf.test"]
 ALLOWED_HOSTS = [
     "localhost",
     "main.d2l2e23fu3jjf4.amplifyapp.com",
-    "*.cspef.org",
+    "mc.csepf.org",
+    "api.csepf.org",
     "csepf-cf3b76628104.herokuapp.com"
 ]
 
