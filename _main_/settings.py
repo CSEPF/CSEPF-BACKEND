@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
     "main.d2l2e23fu3jjf4.amplifyapp.com",
     "mc.csepf.org",
     "api.csepf.org",
-    "csepf-cf3b76628104.herokuapp.com"
+    "csepf-cf3b76628104.herokuapp.com",
+    "admin.csepf.org"
 ]
 
 # Application definition
