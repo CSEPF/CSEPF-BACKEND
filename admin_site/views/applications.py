@@ -54,6 +54,10 @@ def update_status(request):
                 "application_approval_email.html",
                 {
                     "full_name": application.full_name,
+                     "recruiting_officer":"Matthew Ladd",
+                     "contact_email":"director.csepf@gmail.com",
+                     "current_year":datetime.now().year
+
                 },
             )
         else:
@@ -64,6 +68,9 @@ def update_status(request):
                 "application_rejection_email.html",
                 {
                     "full_name": application.full_name,
+                    "contact_email":"director.csepf@gmail.com",
+                    "current_year":datetime.now().year
+
                 },
             )
 

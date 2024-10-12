@@ -1,3 +1,4 @@
+from datetime import datetime
 from _main_.utils.commons import serialize
 from _main_.utils.errors import CustomError
 from _main_.utils.utils import send_universal_email
@@ -31,7 +32,7 @@ class ApplicationsView:
                 recipients=[args.get("email")],
                 subject="Application Received",
                 template="application_received.html",
-                template_args={"full_name": args.get("full_name")},
+                template_args={"full_name": args.get("full_name"), "current_year": datetime.now().year},
             )
 
             return serialize(application), None
