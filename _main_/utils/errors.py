@@ -30,5 +30,5 @@ class ServerError(APIError):
 
 
 class CustomError(APIError):
-    def __init__(self, err_msg):
-        super().__init__(str(err_msg), 200)
+    def __init__(self, err_msg, status=200):
+        super().__init__(str(err_msg), status)

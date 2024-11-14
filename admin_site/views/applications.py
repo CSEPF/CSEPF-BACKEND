@@ -69,7 +69,8 @@ def update_status(request):
                 {
                     "full_name": application.full_name,
                     "contact_email":"director.csepf@gmail.com",
-                    "current_year":datetime.now().year
+                    "current_year":datetime.now().year,
+                    "recruiting_officer":"Matthew Ladd",
 
                 },
             )

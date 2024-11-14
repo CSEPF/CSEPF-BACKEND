@@ -1,3 +1,4 @@
+import os
 from _main_.utils.commons import serialize, serialize_all
 from _main_.utils.errors import CustomError
 from database.models import Fellow, Presentation, Project, SiteTrip, Testimonial
@@ -148,17 +149,16 @@ class FellowsView:
             name = args.get("name")
             email = args.get("email")
             message = args.get("message")
+            from_email = os.environ.get("EMAIL_HOST_USER")
 
             if not name or not email or not message:
                 return None, CustomError("name, email and message are required")
-            
-            print(name, email, message)
-            
-            # send email
+                    
+
             send_mail(
                 "Message from contact form",
                 message,
-                "info@csepf.com",
+                from_email,
                 [email],
                 fail_silently=False,
             )
