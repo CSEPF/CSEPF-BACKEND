@@ -26,9 +26,8 @@ load_dotenv()
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-#&")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# https://*.massenergize.org, https://*.massenergize.com, https://*.massenergize.dev, https://*.massenergize.test
 DEBUG = True
-CSRF_TRUSTED_ORIGINS = ["http://*.csepf.test"]
+CSRF_TRUSTED_ORIGINS = ["http://*.csepf.test", "http://*.csepf.org"]
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -36,7 +35,8 @@ ALLOWED_HOSTS = [
     "mc.csepf.org",
     "api.csepf.org",
     "csepf-cf3b76628104.herokuapp.com",
-    "admin.csepf.org"
+    "admin.csepf.org",
+    '127.0.0.1'
 ]
 
 # Application definition
@@ -100,22 +100,22 @@ WSGI_APPLICATION = "_main_.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.environ.get("DATABASE_ENGINE"),
-        "NAME": os.environ.get("DATABASE_NAME"),
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "csepf-db",
         "USER": os.environ.get("DATABASE_USER"),
         "PASSWORD": os.environ.get("DATABASE_PASSWORD"),
-        "HOST": os.environ.get("DATABASE_HOST"),
-        "PORT": os.environ.get("DATABASE_PORT"),
+        "HOST": "localhost",
+        "PORT":"5433",
     },
     "test": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": "test.sqlite3",
     },
 }
-DATABASES['default'] = dj_database_url.config(
-    conn_max_age=600,
-    conn_health_checks=True,
-)
+# DATABASES['default'] = dj_database_url.config(
+#     conn_max_age=600,
+#     conn_health_checks=True,
+# )
 
 # -------- FILE STORAGE CONFIGURATION ---------------------#
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"

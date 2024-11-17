@@ -211,6 +211,7 @@ class Project(BaseModel):
                 "document": self.document.url if self.document else None,
                 "topics": [tag.to_json() for tag in self.topics.all()],
                 "is_featured": self.is_featured,
+                "year": self.fellow.cohort,
                 "fellow": {
                     "full_name":self.fellow.full_name,
                     "email":self.fellow.email,
@@ -252,6 +253,7 @@ class Testimonial(BaseModel):
                 "is_published": self.is_published,
                 "is_featured": self.is_featured,
                 "media": self.media.url if self.media else None,
+                "year": self.fellow.cohort,
             }
         )
         return data
@@ -289,6 +291,7 @@ class Presentation(BaseModel):
                 "picture": self.picture.url if self.picture else None,
                 "is_featured": self.is_featured,
                 "summary": self.summary,
+                "year": self.cohort,
             }
         )
         return data
