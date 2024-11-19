@@ -26,7 +26,7 @@ load_dotenv()
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-#&")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 CSRF_TRUSTED_ORIGINS = ["http://*.csepf.test", "http://*.csepf.org"]
 
 ALLOWED_HOSTS = [
