@@ -100,22 +100,22 @@ WSGI_APPLICATION = "_main_.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "csepf-db",
+        "ENGINE": os.environ.get("DATABASE_ENGINE"),
+        "NAME": os.environ.get("DATABASE_NAME"),
         "USER": os.environ.get("DATABASE_USER"),
         "PASSWORD": os.environ.get("DATABASE_PASSWORD"),
-        "HOST": "localhost",
-        "PORT":"5433",
+        "HOST": os.environ.get("DATABASE_HOST"),
+        "PORT": os.environ.get("DATABASE_PORT"),
     },
     "test": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": "test.sqlite3",
     },
 }
-# DATABASES['default'] = dj_database_url.config(
-#     conn_max_age=600,
-#     conn_health_checks=True,
-# )
+DATABASES['default'] = dj_database_url.config(
+    conn_max_age=600,
+    conn_health_checks=True,
+)
 
 # -------- FILE STORAGE CONFIGURATION ---------------------#
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
